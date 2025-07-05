@@ -181,3 +181,15 @@ class MGCB_snippet_detail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mi
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
 
+# using generic clased based view
+from .models import Snippet
+from .serializers import SnippetSerializer
+from rest_framework import generics
+
+class GCB_snippet_list(generics.ListCreateAPIView):
+    queryset = Snippet.objects.all()
+    serializer_class = SnippetSerializer
+
+class GCB_snippet_detail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Snippet.objects.all()
+    serializer_class = SnippetSerializer
