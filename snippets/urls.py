@@ -6,7 +6,9 @@ urlpatterns = [
     path('snippets/', views.snippet_list),
     path('snippets/<int:pk>/', views.snippet_detail),
     path('fbsnippets/', views.fbsnippet_list),
-    path('fbsnippets/<int:pk>/', views.fbsnippet_detail)
+    path('fbsnippets/<int:pk>/', views.fbsnippet_detail),
+    path('cbsnippets/', views.CBsnippet_list.as_view()),
+    path('cbsnippets/<int:pk>', views.CBsnippet_detail.as_view())
 ]
 
 
