@@ -8,7 +8,9 @@ urlpatterns = [
     path('fbsnippets/', views.fbsnippet_list),
     path('fbsnippets/<int:pk>/', views.fbsnippet_detail),
     path('cbsnippets/', views.CBsnippet_list.as_view()),
-    path('cbsnippets/<int:pk>', views.CBsnippet_detail.as_view())
+    path('cbsnippets/<int:pk>', views.CBsnippet_detail.as_view()),
+    path('mgcbsnippets/', views.MGCB_snippet_list.as_view()),
+    path('mgcbsnippets/<int:pk>', views.MGCB_snippet_detail.as_view()),
 ]
 
 
